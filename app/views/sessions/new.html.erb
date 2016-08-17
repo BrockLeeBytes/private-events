@@ -1,0 +1,13 @@
+<% content_for :mid do %>
+	<div class="middle">	
+		<h2>Log In</h2>
+		<%= form_for(:session, url: login_path) do |f| %>
+			<p>
+			<%= f.label :name %>
+ 			<%= f.text_field :name %>
+			</p>
+			<p><%= f.submit 'Okay' %></p>
+		<% end %>
+			
+	</div>
+<% end %>

@@ -1,14 +1,52 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>PrivateEvents</title>
-    <%= csrf_meta_tags %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PrivateEvents</title>
+
+<%= render 'layouts/shim' %>
+<%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
+<body>
+<div id="wrap">
 
-  <body>
-    <%= yield %>
-  </body>
+<div id="top"></div>
+
+<div id="content">
+
+<%= render 'layouts/header' %>
+
+<%= yield :mid %>
+		
+<div class="right">
+		
+<h2>Navigation</h2>
+
+<ul>
+<li><a href="http://www.minimalistic-design.net">Minimalistic Design</a></li>
+<li><a href="http://www.oswd.org">Open Source Web Design</a></li>
+<li><a href="http://www.opendesigns.org">Open Designs</a></li>
+<li><a href="http://www.openwebdesign.org">Open Web Design</a></li>
+<li><a href="http://www.iollo.com">Iollo's review highway</a></li>
+<li><a href="http://www.historyexplorer.net">History Timelines</a></li>
+<li><a href="http://www.quakerparrot.info">Quaker Parrot</a></li>
+<li><a href="http://www.moneybookersclub.com">Moneybookers Club</a></li>
+</ul>
+		
+</div>
+
+<div id="clear"></div>
+
+</div>
+
+<div id="bottom"></div>
+
+</div>
+
+<div id="footer">
+Design by <a href="http://www.minimalistic-design.net">Minimalistic Design</a>
+</div>
+</body>
 </html>

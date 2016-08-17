@@ -1,0 +1,13 @@
+<% content_for :mid do %>
+	<div class="middle">	
+		<h2>Sign Up</h2>
+		<%= form_for @user do |f| %>
+			<p>
+			<%= f.label :name %>
+ 			<%= f.text_field :name %>
+			</p>
+			<p><%= f.submit 'Okay' %></p>
+		<% end %>
+			
+	</div>
+<% end %>

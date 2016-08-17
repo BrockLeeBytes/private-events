@@ -1,0 +1,17 @@
+<% content_for :mid do %>
+	<div class="middle">	
+		<h2>New Event</h2>
+		<%= form_for(:event, url: new_event_path) do |f| %>
+			<p>
+			<%= f.label :event_date %>
+ 			<%= f.date_field :event_date %>
+			</p>
+			<p>
+				<%= f.label :description %>
+				<%= f.text_field :description %>
+			</p>
+			<p><%= f.submit 'Okay' %></p>
+		<% end %>
+			
+	</div>
+<% end %>

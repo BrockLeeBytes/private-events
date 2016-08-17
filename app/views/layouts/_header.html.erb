@@ -1,0 +1,14 @@
+<div class="header">
+<h1><a href="#">Private events</a></h1>
+</div>
+<div class="breadcrumbs">
+	<% if logged_in? %>
+		<%= @user.name %> 
+		&middot; <%= link_to 'Home', root_url %> 
+		&middot; <%= link_to 'Log out', logout_path, :method => :delete %> 
+		&middot; <%= link_to 'Create Event', new_event_path %>
+	<% else %>
+		<%= link_to 'Signup', signup_path %>
+		&middot; <%= link_to 'Log in', login_path %>
+	<% end %>
+</div>
