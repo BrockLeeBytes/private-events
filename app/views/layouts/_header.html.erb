@@ -1,9 +1,9 @@
 <div class="header">
-<h1><a href="#">Private events</a></h1>
+<h1><a href="#">Private Events</a></h1>
 </div>
 <div class="breadcrumbs">
 	<% if logged_in? %>
-		<%= current_user.name %> 
+		<%= link_to "#{current_user.name}", user_path(current_user) %> 
 		&middot; <%= link_to 'Home', root_url %> 
 		&middot; <%= link_to 'Log out', logout_path, :method => :delete %> 
 		&middot; <%= link_to 'Create Event', new_event_path %>

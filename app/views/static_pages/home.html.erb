@@ -3,7 +3,7 @@
 	<% if logged_in? %>
 		<h2>My Events</h2>
 			<% @event.each do |f| %>
-				<p> <%= f.event_date %> </p>
+				<p> <%= link_to "#{f.name}", event_path(f) %> : <%= f.event_date %> </p>
 				<p> <%= f.description %> </p>
 			<% end %>
 	<% else %>

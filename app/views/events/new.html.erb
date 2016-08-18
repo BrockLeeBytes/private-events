@@ -3,6 +3,10 @@
 		<h2>New Event</h2>
 		<%= form_for(:event, url: new_event_path) do |f| %>
 			<p>
+				<%= f.label :event_name %>
+				<%= f.text_field :name %>
+			</p>
+			<p>
 			<%= f.label :event_date %>
  			<%= f.date_field :event_date %>
 			</p>

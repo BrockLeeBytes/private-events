@@ -1,0 +1,6 @@
+<% content_for :mid do %>
+	<div class="middle">
+		<h2><%= @event.name %></h2>
+		<p>Event creator: <%= link_to "#{@user.name}", user_path(@user) %> </p>
+	</div>
+<% end %>

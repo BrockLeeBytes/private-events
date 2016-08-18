@@ -1,0 +1,10 @@
+<% content_for :mid do %>
+	<div class='middle'>
+		<h2>All Events</h2>
+		<% @events.each do |f| %>
+			<p> <%= link_to "#{f.name}", event_path(f) %> : <%= f.event_date %> </p>
+			<p> <%= f.description %> </p>
+			<br>
+		<% end %>
+	</div>
+<% end %>

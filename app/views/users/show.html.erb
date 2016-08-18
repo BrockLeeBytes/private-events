@@ -3,10 +3,10 @@
 	<%if @user == current_user %>
 		<h2>My Events</h2>
 	<% else %> 	
-		<h2>Events</h2>
+		<h2><%= @user.name %>'s Events</h2>
 	<% end %>
 			<% @event.each do |f| %>
-				<p> <%= f.event_date %> </p>
+				<p> <%= link_to "#{f.name}", event_path(f) %> : <%= f.event_date %> </p>
 				<p> <%= f.description %> </p>
 			<% end %>
 	</div>
