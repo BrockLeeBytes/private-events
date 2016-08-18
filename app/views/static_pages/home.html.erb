@@ -1,14 +1,16 @@
 <% content_for :mid do %>
 	<div class="middle">
-	<%if @user == current_user %>
+	<% if logged_in? %>
 		<h2>My Events</h2>
-	<% else %> 	
-		<h2>Events</h2>
-	<% end %>
 			<% @event.each do |f| %>
 				<p> <%= f.event_date %> </p>
 				<p> <%= f.description %> </p>
 			<% end %>
+	<% else %>
+		<h2>Welcome to Private Events!</h2>
+			If you're not a member then please sign up and start
+			planning your events today!
+	<% end %>
 	</div>
 
 <% end %>

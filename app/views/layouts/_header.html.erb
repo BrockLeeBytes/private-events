@@ -3,7 +3,7 @@
 </div>
 <div class="breadcrumbs">
 	<% if logged_in? %>
-		<%= @user.name %> 
+		<%= current_user.name %> 
 		&middot; <%= link_to 'Home', root_url %> 
 		&middot; <%= link_to 'Log out', logout_path, :method => :delete %> 
 		&middot; <%= link_to 'Create Event', new_event_path %>
