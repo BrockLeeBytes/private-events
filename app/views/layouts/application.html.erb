@@ -19,23 +19,9 @@
 <%= render 'layouts/header' %>
 
 <%= yield :mid %>
-		
-<div class="right">
-		
-<h2>Navigation</h2>
 
-<ul>
-<li><%= link_to 'Events', events_path %></li>
-<li><a href="http://www.oswd.org">Open Source Web Design</a></li>
-<li><a href="http://www.opendesigns.org">Open Designs</a></li>
-<li><a href="http://www.openwebdesign.org">Open Web Design</a></li>
-<li><a href="http://www.iollo.com">Iollo's review highway</a></li>
-<li><a href="http://www.historyexplorer.net">History Timelines</a></li>
-<li><a href="http://www.quakerparrot.info">Quaker Parrot</a></li>
-<li><a href="http://www.moneybookersclub.com">Moneybookers Club</a></li>
-</ul>
+<%= yield :right %>
 		
-</div>
 
 <div id="clear"></div>
 
