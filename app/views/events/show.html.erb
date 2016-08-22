@@ -2,23 +2,23 @@
 	<div class="middle">
 		<h2><%= @event.name %></h2>
 		<p>Event creator: <%= link_to "#{@user.name}", user_path(@user) %> </p>
+		<% if !current_user.already_attending?(@event) %>
+			<%= button_to 'Attend?', {:controller => 'invites', :action => 'create',                        :id => @event.id } %>
+		<% else %>
+			<%= button_to 'Unattend?', unattend_path(:id => @event.id), :method => :delete %>
+		<% end %>
 	</div>
 <% end %>
 
 <% content_for :right do %>
 	<div class="right">
 		
-	<h2>Navigation</h2>
+	<h2>Users Attending</h2>
 
 		<ul>
-			<li><%= link_to 'Events', events_path %></li>
-			<li><a href="http://www.oswd.org">Open Source Web Design</a></li>
-			<li><a href="http://www.opendesigns.org">Open Designs</a></li>
-			<li><a href="http://www.openwebdesign.org">Open Web Design</a></li>
-			<li><a href="http://www.iollo.com">Iollo's review highway</a></li>
-			<li><a href="http://www.historyexplorer.net">History Timelines</a></li>
-			<li><a href="http://www.quakerparrot.info">Quaker Parrot</a></li>
-			<li><a href="http://www.moneybookersclub.com">Moneybookers Club</a></li>
+			<% @attendees.each do |f| %>
+				<li><%= link_to "#{f.name}", user_path(f) %></li>
+			<% end %>
 		</ul>
 		
 </div>

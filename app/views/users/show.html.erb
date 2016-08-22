@@ -5,10 +5,23 @@
 	<% else %> 	
 		<h2><%= @user.name %>'s Events</h2>
 	<% end %>
-			<% @event.each do |f| %>
+			<% @created_events.each do |f| %>
 				<p> <%= link_to "#{f.name}", event_path(f) %> : <%= f.event_date %> </p>
 				<p> <%= f.description %> </p>
 			<% end %>
 	</div>
 
+<% end %>
+
+<% content_for :right do %>
+	<div class='right'>
+		<h2>Upcoming Events</h2>
+		<% @upcoming_events.each do |f| %>
+			<li><%= link_to "#{f.name}", event_path(f) %></li>
+		<% end %>
+		<h2>Previous Events</h2>
+		<% @prev_events.each do |f| %>
+			<li><%= link_to "#{f.name}", event_path(f) %></li>
+		<% end %>		
+	</div>
 <% end %>

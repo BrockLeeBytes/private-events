@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 	delete '/logout', to: 'sessions#destroy'
 	get '/new_event', to: 'events#new'
 	post '/new_event', to: 'events#create'
+	post '/attend', to: 'invites#create'
+	delete '/unattend', to: 'invites#destroy'
 	resources :users
 	resources :events
 

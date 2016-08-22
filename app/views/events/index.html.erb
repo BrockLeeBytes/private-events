@@ -1,9 +1,19 @@
 <% content_for :mid do %>
 	<div class='middle'>
-		<h2>All Events</h2>
-		<% @events.each do |f| %>
+		<h2>All Upcoming Events</h2>
+		<% @upcoming.each do |f| %>
 			<p> <%= link_to "#{f.name}", event_path(f) %> : <%= f.event_date %> </p>
 			<p> <%= f.description %> </p>
+			<br>
+		<% end %>
+	</div>
+<% end %>
+
+<% content_for :right do %>
+	<div class='right'>
+		<h2>All Past Events</h2>
+		<% @past.each do |f| %>
+			<li><%= link_to "#{f.name}", event_path(f) %></li>
 			<br>
 		<% end %>
 	</div>
