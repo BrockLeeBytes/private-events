@@ -11,11 +11,11 @@ class User < ApplicationRecord
 	end
 
 	def upcoming_events
-		self.attended_events.where("event_date >= ?", Date.current)
+		self.attended_events.upcoming
 	end
 
 	def previous_events
-		self.attended_events.where("event_date < ?", Date.current)
+		self.attended_events.past
 	end
 
 end
